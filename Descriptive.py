@@ -5,13 +5,13 @@ ms_data = pd.read_excel("C:\Me\Code\Code\Python\Data_Project\Excel Files\Dataset
 
 # selecting number columns
 ms_data_num=ms_data.select_dtypes(include=["number"])
-print(ms_data_num.columns)
+# print(ms_data_num.columns)
 
-print(ms_data_num.describe())
+# print(ms_data_num.describe())
 
-print(ms_data_num.dtypes)
+# print(ms_data_num.dtypes)
 
-print(ms_data_num.columns)
+# print(ms_data_num.columns)
 
 
 
@@ -43,6 +43,6 @@ summary = pd.DataFrame({
     'Max': ms_data_num.iloc[:,0:23].max()
 })
 summary.round(2)
-summary.to_excel(r"C:\Me\Code\Code\Python\Data_Project\Output.xlsx")
+summary.to_excel(r"Excel Files\Output.xlsx")
 
 
