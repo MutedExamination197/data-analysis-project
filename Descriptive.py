@@ -1,5 +1,5 @@
 import pandas as pd
-ms_data = pd.read_excel("C:\Me\Code\Code\Python\Data_Project\Dataset.xlsx")
+ms_data = pd.read_excel("C:\Me\Code\Code\Python\Data_Project\Excel Files\Dataset.xlsx")
 # print(ms_data.head())
 # print(ms_data.columns)
 
