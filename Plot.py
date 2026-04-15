@@ -17,32 +17,32 @@ a=data_num.columns
 # ## USed GPT to understand how to build a loop
 # #### HISTOGRAMS
 for col in a[0:22]:
-    plt.figure()
+    plt.figure(figsize=(10,6))
     data_num[col].hist()
 
     plt.title(f"{col} Distribution")
     plt.xlabel(col)
     plt.ylabel("Frequency")
-    plt.savefig(f"Histogram Plots\{col}_hist.png")
+    plt.savefig(f"Histogram Plots\{col}_hist.png",dpi=300)
     plt.close()
 
 
 # ##### Boxplots
 for col in a[0:22]:
-    plt.figure()
+    plt.figure(figsize=(10,6))
     plt.boxplot(data_num[col])
     plt.title(f"{col} Box Plot")
-    plt.savefig(f"BoxPlots\{col}_boxplots.png")
+    plt.savefig(f"BoxPlots\{col}_boxplots.png",dpi=300)
     plt.close()
 
 ### Correlation 
 corr=data_num.iloc[:,0:22].corr()
 
-plt.figure()
+plt.figure(figsize=(12,10))
 sns.heatmap(corr, annot=True)
 
 plt.title("Correlation Heatmap")
-plt.savefig("Correlation Heatmap\Correlation Heatmap.png")
+plt.savefig("Correlation Heatmap\Correlation Heatmap.png",dpi=300)
 
 
 
@@ -75,11 +75,12 @@ pairs = [
 ]
 
 for i in pairs:
-    plt.figure()
+    plt.figure(figsize=(10,6))
     plt.scatter(data_num[i[0]], data_num[i[1]])
     x=(f"{i[0]} vs {i[1]}")
     plt.title(x)
     plt.xlabel(f"{i[0]}")
     plt.ylabel(f"{i[1]}")
-    plt.savefig(r"\Scatter plots\\" + x + ".png")
+    filename = f"plots/{i[0].replace(' ', '_')}_vs_{i[1].replace(' ', '_')}.png"
+    plt.savefig(filename, dpi=300)
     plt.close()
